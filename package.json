@@ -1,0 +1,38 @@
+{
+  "name": "componentized",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raiss/componentized"
+  },
+  "author": "Amir Raisszadeh <raisszadeh@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/raiss/componentized/issues"
+  },
+  "homepage": "https://github.com/raiss/componentized#readme",
+  "dependencies": {
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7"
+  },
+  "devDependencies": {
+    "babel": "^6.5.1",
+    "babel-core": "^6.5.1",
+    "babel-loader": "^6.2.2",
+    "babel-preset-es2015": "^6.5.0",
+    "babel-preset-react": "^6.5.0",
+    "babel-preset-react-hmre": "^1.1.0",
+    "eventsource-polyfill": "^0.9.6",
+    "style-loader": "^0.13.0",
+    "css-loader": "^0.23.1",
+    "express": "^4.13.4",
+    "webpack": "^1.12.13",
+    "webpack-dev-middleware": "^1.5.1",
+    "webpack-hot-middleware": "^2.6.4"
+  }
+}
