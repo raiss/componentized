@@ -1,2 +1,2 @@
-# react-number-counter
-a component which increment/decrement number nicely
+# componentized
+Trying to workout what would be the best way to create a generic validation
