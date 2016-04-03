@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './GenericComponent.scss';
 
 export class GenericComponent extends Component {
   blur(e) {
@@ -11,7 +12,7 @@ export class GenericComponent extends Component {
 
   render() {
     return (
-      <div>
+      <div className="genericcomponent-container">
         <div>{ this.props.title || "Title" }</div>
         { this.props.inputComponent ? inputComponent :
           <input

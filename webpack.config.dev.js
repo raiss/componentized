@@ -27,9 +27,13 @@ module.exports = {
       include: path.join(__dirname, 'src')
     },
     {
-      test: /\.css?$/,
+      test: /\.css$/,
       exclude: /(node_modules|bower_components)/,
-      loader: 'style!css'
-    }]
+      loaders: ["style", "css"]
+    },
+    {
+        test: /\.scss$/,
+        loaders: ["style", "css", "sass"]
+      }]
   }
 };
