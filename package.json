@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "env NODE_ENV=test && mocha --recursive --compilers js:babel-core/register --require ./src/test/setup.js ./src/**/*.spec.js",
+    "test:watch": "npm test -- --watch",
     "start": "node devServer.js"
   },
   "repository": {
@@ -19,7 +20,11 @@
   "homepage": "https://github.com/raiss/componentized#readme",
   "dependencies": {
     "react": "^0.14.7",
-    "react-dom": "^0.14.7"
+    "react-dom": "^0.14.7",
+    "react-redux": "^4.4.1",
+    "redux": "^3.3.1",
+    "redux-logger": "^2.6.1",
+    "redux-thunk": "^2.0.1"
   },
   "devDependencies": {
     "babel": "^6.5.1",
@@ -30,8 +35,12 @@
     "babel-preset-react-hmre": "^1.1.0",
     "css-loader": "^0.23.1",
     "eventsource-polyfill": "^0.9.6",
+    "expect": "^1.16.0",
     "express": "^4.13.4",
+    "jsdom": "^8.2.0",
+    "less": "^2.6.1",
     "less-loader": "^2.2.2",
+    "mocha": "^2.4.5",
     "node-sass": "^3.4.2",
     "sass-loader": "^3.2.0",
     "style-loader": "^0.13.0",
