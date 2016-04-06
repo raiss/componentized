@@ -1,16 +1,38 @@
 import expect from 'expect'
 import reducer from './validator.reducer'
-import * as types from './../actions/actionConsts'
+import { VALIDATE_INPUT } from '../actions/actionConsts';
 
 describe('REDUCER: ', () => {
 
-  const initialState = [{}];
+  const initialState = {
+    firstElement: {
+      isValid: false,
+      validationReport: {
+        title: "unknown",
+        details: "unknown element!"
+      }
+    }
+  };
 
   describe('validator.reducer.js', () => {
 
-      it('should return the initial state', () => {
+      it('should return the current state when action type is unknown', () => {
         expect(
           reducer(initialState, {})
+        ).toEqual(
+          initialState
+        )
+      })
+
+      it('should add the validation result to state', () => {
+        expect(
+          reducer(initialState,
+            {
+              type: VALIDATE_INPUT,
+              inputId: "firstElement",
+              validationReport: initialState.validationReport
+            }
+          )
         ).toEqual(
           initialState
         )
