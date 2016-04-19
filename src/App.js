@@ -1,18 +1,21 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { FirstComponent } from './components/FirstComponent';
 import { GenericComponent } from './components/GenericComponent';
+import { Section } from './components/Section';
+import { validateInput } from './services/validation.service'
 
 export class App extends Component {
   render() {
     const { validator } = this.props;
 
     return (
-      <div>
-        <FirstComponent/>
-        <GenericComponent validator={validator}/>
-      </div>
+      <form>
+        <Section title="Generic Section">
+          <GenericComponent validator={validator}  validate={validateInput} compId="firstName"/>
+          <GenericComponent validator={validator}  validate={validateInput} compId="lastName"/>
+        </Section>
+      </form>
     )
   }
 }

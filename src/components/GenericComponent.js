@@ -4,6 +4,7 @@ import './GenericComponent.scss';
 export class GenericComponent extends Component {
   blur(e) {
     console.log("blur from: ", e.target.value);
+    this.props.validate(this.props.compId, e.target.value)
   }
 
   focus(e) {
@@ -17,6 +18,7 @@ export class GenericComponent extends Component {
         { this.props.inputComponent ? inputComponent :
           <input
             type="text"
+            required="true"
             onBlur={this.blur.bind(this)}
             onFocus={this.focus.bind(this)}
             placeholder="Enter your rego here."/>
