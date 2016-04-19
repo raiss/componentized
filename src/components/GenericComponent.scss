@@ -1,5 +1,24 @@
 .genericcomponent-container {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   border: 1px solid black;
+}
+
+.genericcomponent-title {
+  width: 49%;
+}
+
+.genericcomponent-input{
+  width:49%;
+}
+
+.genericcomponent-error {
+  font-size: .3em;
+  width: 100%;
+}
+
+.genericcomponent-tooltip {
+  font-size: .3em;
+  width: 100%;
 }

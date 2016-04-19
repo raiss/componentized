@@ -4,7 +4,7 @@ import './GenericComponent.scss';
 export class GenericComponent extends Component {
   blur(e) {
     console.log("blur from: ", e.target.value);
-    this.props.validate(this.props.compId, e.target.value)
+    this.props.validate(this.props.componentObj.id, e.target.value)
   }
 
   focus(e) {
@@ -12,19 +12,21 @@ export class GenericComponent extends Component {
   }
 
   render() {
+    const componentObj = this.props.componentObj;
     return (
       <div className="genericcomponent-container">
-        <div>{ this.props.title || "Title" }</div>
+        <div className="genericcomponent-title">{ componentObj.title || "Title" }</div>
         { this.props.inputComponent ? inputComponent :
           <input
+            className="genericcomponent-input"
             type="text"
             required="true"
             onBlur={this.blur.bind(this)}
             onFocus={this.focus.bind(this)}
             placeholder="Enter your rego here."/>
         }
-        <div>error</div>
-        <div>tooltip</div>
+        <div className="genericcomponent-error">error</div>
+        <div className="genericcomponent-tooltip">{componentObj.tooltip}</div>
       </div>
     )
   }
