@@ -1,8 +1,9 @@
 import React from 'react';
+import './Section.scss';
 
 export const Section = ({title, children}) => {
   return (
-    <fieldset>
+    <fieldset className="section-container">
      <legend>{title}</legend>
      {children}
    </fieldset>

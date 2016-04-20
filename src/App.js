@@ -1,47 +1,44 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { validateInput } from './services/validation.service'
+import { createComponents } from './services/componentEngine.service'
 
 //*** injected by backend temp engine
-import { GenericComponent } from './components/GenericComponent';
-import { Section } from './components/Section';
-
 const appObj = [
-	  {
-      id: "e34fdc",
-	    name: "firstName",
-      title: "First Name",
-      type: "GenericComponent",
-	    dependencies: [],
-	    validations: []
-	  },
-	  {
-      id: "f2fj3j",
-	    name: "lastName",
-      title: "Last name",
-      type: "GenericComponent",
-      tooltip: "Enter your lastname, you might call it surname!",
-	    dependencies: [],
-	    validations: [
-	      {
-          isRequered: "true"
-        }
-	    ]
-	  }
+	{
+    id: "g3hj34",
+    name: "mock section",
+    title: "Generic Section",
+    type: "Section",
+		children: [
+			{
+				id: "e34fdc",
+				name: "firstName",
+				title: "First Name",
+				type: "GenericComponent",
+				placeholder: "Firstname",
+				dependencies: [],
+				validations: []
+			},
+			{
+				id: "f2fj3j",
+				name: "lastName",
+				title: "Last name",
+				type: "GenericComponent",
+				tooltip: "Enter your lastname, you might call it surname!",
+				placeholder: "Surname",
+				dependencies: [],
+				validations: [
+					{
+						isRequered: "true"
+					}
+				]
+			}
+		],
+    dependencies: [],
+    validations: []
+	}
 ]
-
-const renderComponents = (validator) => appObj.map(comp => {
-  console.log("test");
-  let type = comp.type;
-  switch (type) {
-    case "GenericComponent":
-      return (<GenericComponent validator={validator} key={comp.id} validate={validateInput} componentObj={comp}/>);
-      break;
-    default:
-      return <div>Component not found!</div>
-  }
-})
 //***
 
 export class App extends Component {
@@ -50,11 +47,9 @@ export class App extends Component {
 
     return (
       <form>
-        <Section title="Generic Section">
-          {
-            renderComponents(validator)
-          }
-        </Section>
+        {
+          createComponents(appObj, validator)
+        }
       </form>
     )
   }

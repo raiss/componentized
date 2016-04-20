@@ -23,7 +23,7 @@ export class GenericComponent extends Component {
             required="true"
             onBlur={this.blur.bind(this)}
             onFocus={this.focus.bind(this)}
-            placeholder="Enter your rego here."/>
+            placeholder={componentObj.placeholder}/>
         }
         <div className="genericcomponent-error">error</div>
         <div className="genericcomponent-tooltip">{componentObj.tooltip}</div>
