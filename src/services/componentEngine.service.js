@@ -10,7 +10,6 @@ const SECTION = "Section";
 
 export const createComponents = function(appObj, validator) {
   return appObj.map(comp => {
-    console.log("test");
     let type = comp.type;
     switch (type) {
       case GENERIC_COMPONENT:
