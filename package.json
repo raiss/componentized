@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "env NODE_ENV=test && mocha --recursive --compilers js:babel-core/register --require ./src/test/setup.js ./src/**/*.spec.js",
+    "test": "NODE_ENV=test mocha --recursive --compilers js:babel-core/register,css:./ignore-style.js --require ./src/test/setup.js ./src/**/*.spec.js",
     "test:watch": "npm test -- --watch",
     "start": "node devServer.js"
   },
@@ -37,6 +37,7 @@
     "eventsource-polyfill": "^0.9.6",
     "expect": "^1.16.0",
     "express": "^4.13.4",
+    "ignore-styles": "^1.2.0",
     "jsdom": "^8.2.0",
     "less": "^2.6.1",
     "less-loader": "^2.2.2",
