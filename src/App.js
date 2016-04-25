@@ -10,7 +10,7 @@ export class App extends Component {
 
     return (
       <form>
-        { createComponents(appObj, validator) }
+        { createComponents(appObj, {validator: validator}) }
       </form>
     )
   }

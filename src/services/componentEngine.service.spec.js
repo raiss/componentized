@@ -14,7 +14,7 @@ describe('SERVICE: ', () => {
         )
       })
 
-      it('should return not found when component is unknown component', () => {
+      it('should return "Component not found" when the component param is unknown', () => {
         let comp = createComponents([{type: "UNKNOWN"}], {validator: {}});
         expect(comp[0].props.children)
         .toEqual("Component not found!")
