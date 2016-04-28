@@ -1,7 +1,7 @@
 import expect from 'expect'
 import { applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
-import * as actions from './actionCreators'
+import * as actions from './actionCreator'
 import { VALIDATE_INPUT } from './actionConsts'
 
 const middlewares = [ thunk ]
@@ -44,17 +44,5 @@ function mockStore(getState, expectedActions, onLastAction) {
 }
 
 describe('ACTIONS: ', () => {
-  it('validateInput should return unknown when inputId is unknown', () => {
-    var { VALIDATE_INPUT } = require('./actionConsts');
-    let expectedVal = {
-      type: VALIDATE_INPUT,
-      inputId: "firstInput",
-      isValid: false,
-      validationReport: [{
-        title: "unknown",
-        details: "unknown element!"
-      }]
-    }
-    expect(actions.validateInput("firstInput", {})).toEqual(expectedVal)
-  })
+
 })
