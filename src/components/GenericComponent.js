@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import { validateInput } from '../actions/actionCreator';
 import './GenericComponent.scss';
 
 export class GenericComponent extends Component {
   blur(e) {
     console.log("blur from: ", e.target.value);
-    this.props.validate(this.props.componentObj.id, e.target.value)
+    this.props.validate(validateInput(this.props.componentObj.id, e.target.value))
   }
 
   focus(e) {
@@ -15,9 +16,10 @@ export class GenericComponent extends Component {
     const componentObj = this.props.componentObj;
     return (
       <div className="genericcomponent-container">
-        <div className="genericcomponent-title">{ componentObj.title || "Title" }</div>
+        <label for={componentObj.id} className="genericcomponent-title" for="frmEmailA">{ componentObj.label || "Label" }</label>
         { this.props.inputComponent ? inputComponent :
           <input
+            id={componentObj.id}
             className="genericcomponent-input"
             type="text"
             required="true"

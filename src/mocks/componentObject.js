@@ -8,7 +8,7 @@ export const appObj = [
 			{
 				id: "e34fdc",
 				name: "firstName",
-				title: "First Name",
+				label: "First Name",
 				type: "GenericComponent",
 				placeholder: "Firstname",
 				dependencies: [],
@@ -17,7 +17,7 @@ export const appObj = [
 			{
 				id: "f2fj3j",
 				name: "lastName",
-				title: "Last name",
+				label: "Last name",
 				type: "GenericComponent",
 				tooltip: "Enter your lastname, you might call it surname!",
 				placeholder: "Surname",
@@ -27,6 +27,42 @@ export const appObj = [
 						isRequered: "true"
 					}
 				]
+			},
+			{
+				id: "d7s6fv",
+				name: "email",
+				label: "Email",
+				type: "GenericComponent",
+				tooltip: "Enter your email!",
+				placeholder: "email",
+				dependencies: [],
+				validations: [
+					{
+						isRequered: "true",
+						isEmail: "true"
+					}
+				]
+			},
+			{
+				id: "ser6fv",
+				name: "confirmEmail",
+				label: "Confirm email",
+				type: "GenericComponent",
+				tooltip: "Reenter your email!",
+				placeholder: "confrim email",
+				dependencies: [],
+				validations: [
+					{
+						isRequered: "true",
+						isEmail: "true"
+					}
+				]
+			},
+			{
+				id: "lfd74k",
+				title: "Submit",
+				type: "Cta",
+				dependencies: []
 			}
 		],
     dependencies: [],
