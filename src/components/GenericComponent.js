@@ -1,11 +1,17 @@
 import React, { Component } from 'react';
-import { validateInput } from '../actions/actionCreator';
+import { validateInput as validateInputActionCreator } from '../actions/actionCreator';
+import { validateInput as validateInputService} from '../services/validation.service';
 import './GenericComponent.scss';
 
 export class GenericComponent extends Component {
   blur(e) {
-    console.log("blur from: ", e.target.value);
-    this.props.validate(validateInput(this.props.componentObj.id, e.target.value))
+    let compObj = this.props.componentObj;
+    console.log("blur from: ", e.target.value, compObj.validations);
+    let validationObj = validateInputService(compObj.validations, e.target.value);
+    console.log(validationObj);
+    let action = validateInputActionCreator(compObj.id, validationObj, e.target.value);
+
+
   }
 
   focus(e) {

@@ -2,7 +2,7 @@ import expect from 'expect'
 import { applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
 import * as actions from './actionCreator'
-import { VALIDATE_INPUT } from './actionConsts'
+import { VALIDATE_INPUT } from './action.const'
 
 const middlewares = [ thunk ]
 

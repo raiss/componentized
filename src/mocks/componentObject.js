@@ -12,7 +12,16 @@ export const appObj = [
 				type: "GenericComponent",
 				placeholder: "Firstname",
 				dependencies: [],
-				validations: []
+				validations: {}
+			},
+			{
+				id: "sd4fdc",
+				name: "Address",
+				label: "address ",
+				type: "GenericComponent",
+				placeholder: "enter your address",
+				dependencies: [],
+				validations: {}
 			},
 			{
 				id: "f2fj3j",
@@ -22,11 +31,9 @@ export const appObj = [
 				tooltip: "Enter your lastname, you might call it surname!",
 				placeholder: "Surname",
 				dependencies: [],
-				validations: [
-					{
-						isRequered: "true"
-					}
-				]
+				validations: {
+					isRequered: "true"
+				}
 			},
 			{
 				id: "d7s6fv",
@@ -36,12 +43,10 @@ export const appObj = [
 				tooltip: "Enter your email!",
 				placeholder: "email",
 				dependencies: [],
-				validations: [
-					{
-						isRequered: "true",
-						isEmail: "true"
-					}
-				]
+				validations: {
+					isRequered: "true",
+					isEmail: "true"
+				}
 			},
 			{
 				id: "ser6fv",
@@ -51,12 +56,10 @@ export const appObj = [
 				tooltip: "Reenter your email!",
 				placeholder: "confrim email",
 				dependencies: [],
-				validations: [
-					{
-						isRequered: "true",
-						isEmail: "true"
-					}
-				]
+				validations: {
+					isRequered: "true",
+					isEmail: "true"
+				}
 			},
 			{
 				id: "lfd74k",
@@ -66,6 +69,6 @@ export const appObj = [
 			}
 		],
     dependencies: [],
-    validations: []
+    validations: {}
 	}
 ]

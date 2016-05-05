@@ -7,5 +7,6 @@
     "test": {
       "presets": []
     }
-  }
+  },
+  "plugins": ["ramda"]
 }

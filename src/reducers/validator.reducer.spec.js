@@ -1,6 +1,6 @@
 import expect from 'expect'
 import reducer from './validator.reducer'
-import { VALIDATE_INPUT } from '../actions/actionConsts';
+import { VALIDATE_INPUT } from '../actions/action.const';
 
 describe('REDUCER: ', () => {
 
@@ -30,7 +30,8 @@ describe('REDUCER: ', () => {
             {
               type: VALIDATE_INPUT,
               inputId: "firstElement",
-              validationReport: initialState.validationReport
+              validationReport: initialState.firstElement.validationReport,
+              isValid: false
             }
           )
         ).toEqual(

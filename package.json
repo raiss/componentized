@@ -19,12 +19,14 @@
   },
   "homepage": "https://github.com/raiss/componentized#readme",
   "dependencies": {
+    "ramda": "^0.21.0",
     "react": "^15.0.0",
     "react-dom": "^15.0.0",
     "react-redux": "^4.4.1",
     "redux": "^3.3.1",
     "redux-logger": "^2.6.1",
-    "redux-thunk": "^2.0.1"
+    "redux-thunk": "^2.0.1",
+    "validator": "^5.2.0"
   },
   "devDependencies": {
     "babel": "^6.5.1",

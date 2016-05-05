@@ -3,7 +3,7 @@ import './cta.scss';
 
 export const Cta = ({title}) => {
   return (
-        <button>{title}</button>
+        <button className="cta-button">{title}</button>
   );
 }
 

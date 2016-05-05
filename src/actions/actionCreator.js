@@ -1,13 +1,10 @@
+import { VALIDATE_INPUT } from './action.const';
 
-import { VALIDATE_INPUT } from './actionConsts';
-import { validateInput as validateInputService } from '../services/validation.service';
-
-export function validateInput(inputId, inputVal) {
-  let validatedInput = validateInputService(inputId, inputVal);
+export function validateInput(inputId, validationObj, inputVal) {
   return {
     type: VALIDATE_INPUT,
     inputId,
-    isValid: validatedInput.isValid,
-    validationReport: validatedInput.validationReport
+    isValid: validationObj.isValid,
+    validationReport: validationObj.validationReport
   }
 }
